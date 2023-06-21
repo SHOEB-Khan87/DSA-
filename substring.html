@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>substring</title>
+</head>
+<body>
+    <script>
+      //str = "abcabcbb";
+     function substring(str){
+        if(!str){
+            return 0;
+        }
+        let end = 0;
+        let start = 0;
+        let maxLength = 0;
+        let unique = new Set();
+        while(end<str.length){
+            if(!unique.has(str[end])){
+                unique.add(str[end]);
+                end++;
+                maxLength = Math.max(maxLength,unique.size);
+            }else{
+                unique.delete(str[start]);
+                start++;
+                
+            }
+        }
+        return maxLength;
+     }
+     let store = substring("abcabcbb");
+     console.log(store)
+
+    </script>
+</body>
+</html>

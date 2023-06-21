@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getSum</title>
+</head>
+<boddy>
+    <script>
+   
+   function getSum(array){
+    for(let x of array){
+        for(let i =0;i<array.length;i++){
+            if(x + array[i] === 0){
+                return [x,array[i]]
+            }
+        }
+    }
+   }
+   let store = getSum([-5,-4,-3,-2,0,2,4,6,8]);
+   console.log(store)
+   //array = [-5,-4,-3,-2,0,2,4,6,8]
+   // we will take two pointer from array 
+   //let left=0; and let  right= array.length-1; 
+   //we will use while loop
+   //we will add these two pointer to get sum 0;
+   //if number is greater then 0 we will shift the left pointer;
+   //if number is less then 0 we will shift the right pointer;
+
+ function findSum(array){
+    let left = 0;
+    let right = array.length-1;
+    while(left < right){
+        let sum = array[left] + array[right];
+        if(sum === 0){
+            return [array[left],array[right]];
+        } else if(sum > 0){
+            right--;
+        }else{
+            left++
+        }
+    }
+ }
+ let store1 = findSum([-5,-4,-3,-2,0,2,4,6,8]);
+ console.log(store1)
+    </script>
+</body>
+</html>

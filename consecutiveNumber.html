@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>consecutive number</title>
+</head>
+<body>
+    <script>
+        // [1,2,3,4,3,5,4,6,7,8]
+        //count largest sum of consecutive number
+        //we will take num = 4; matlab 2nd loop 4 times chelega
+        //sum=25;
+        //condition 
+        //num > array => error msg
+        //formula array.length - num +1 =7 => 10 - 4 +1 =7; first loop 7 times chalega
+function largestSum(array,num){
+    if(num > array.length){
+         console.error("please give valid num");
+    }
+let max = 0;
+for(let i = 0;i<array.length - num + 1;i++){
+    let temp = 0;
+    for(let j = 0;j<num;j++){
+        temp += array[i +j];
+    }
+    if(temp > max){
+        max = temp;
+    }
+}
+return max
+}
+let store = largestSum([1,2,3,4,3,5,4,6,7,8],11);
+console.log(store)
+    </script>
+
+</body>
+</html>

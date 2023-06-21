@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+         let all = "abcd738aaabbtttccdddaa";
+         
+function mostoccured(str){
+    let counter = {};
+    str.split("").forEach(elem =>{
+        counter[elem] = counter[elem] ? counter[elem] + 1 : 1;
+    })
+    for(let x in counter){
+        if(x.includes("a")){
+            console.log(`a occured ${counter[x]}`)
+        }
+        if(x.includes("b")){
+            console.log(`b occured ${counter[x]}`)
+        }
+        if(x.includes("c")){
+            console.log(`c occured ${counter[x]}`)
+        }
+        if(x.includes("d")){
+            console.log(`d occured ${counter[x]}`)
+        }
+    }
+}
+mostoccured(all)
+      function most(str){
+        let counter = {};
+        for(let x of str){
+            counter[x] =( counter[x] || 0) + 1
+        }
+        for(let x in counter){
+            if(x.includes("a")){
+                console.log(`a occured ${counter[x]} time`)
+            }
+            if(x.includes("b")){
+                console.log(`b occured ${counter[x]} time`)
+            }
+            if(x.includes("c")){
+                console.log(`c occured ${counter[x]} time`)
+            }
+            if(x.includes("d")){
+                console.log(`d occured ${counter[x]} time`)
+            }
+        }
+      }
+      most(all)
+
+      function mostOccured(str){
+    let counter = {};
+    for(let x of str){
+        counter[x] = (counter[x] || 0) + 1
+    }
+    let max = 1;
+    let char = [];
+    for(let item of str){
+        if(counter[item] > max){
+            max =counter[item];
+            char = item;
+        }
+    }
+    return ` ${char} occured ${max} times `
+}
+let store4 = mostOccured('hello buddyl');
+console.log(store4)
+
+    </script>
+
+</body>
+</html>

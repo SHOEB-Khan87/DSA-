@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <br>
+   <style>
+
+   </style> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+   
+</style>
+</head>
+<body>
+ <p>Epcot is as&reg;the&gt;&nbsp;me&nbsp;park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events</p></details>
+<p id="demo"></p>
+
+
+    <script>
+
+    
+
+    
+ 
+function countUniqe(array){
+    if(array.length >0 ){
+        let  i =0;
+        for(let j = 1;j<array.length;j++){
+            if(array[i] !== array[j]){
+                i++;
+                array[i] = array[j]
+            }
+        }
+        return i +1;
+        
+    }else{
+        throw new Error("array is empty")
+    }
+}
+let unique= countUniqe([1,1,2,2,3,4,4,5,6,7,8,8, 9]);
+console.log(unique)
+    </script>
+
+</body>
+</html>

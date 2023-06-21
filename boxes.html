@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+
+.change{
+   background-color: green;
+}
+#cent{
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+   display: inline-block    ;
+    
+}
+#div{
+
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+}
+#cent{
+    background-color: yellow;
+    color: black;
+    display: none;
+}
+#div:hover #cent{
+    display: block;
+}
+#bo1{
+   border: 1px solid black;
+   height: 200px;
+   width:200px;
+   margin-top: 20px;
+}
+.bo1{
+   background-color: yellow;
+}
+#box{
+   border: 1px solid black;
+   height: 200px;
+   width:200px;
+   margin-top: 20px; 
+}
+   </style>
+</head>
+<body>
+<div id="div">
+    hello beta
+<p id="cent"> 
+   dara diya na
+</p>
+ </div>
+
+
+   <div>
+   <button id="butt">click</button> 
+   </div>
+
+
+<div id="box" onclick="toggle()"></div>
+<div id="bo1" onclick="tog1()"></div>
+
+
+ 
+  <script>
+let toggle = () =>{
+   let get = document.getElementById("box")
+   get.classList.toggle("change")
+}
+ tog1 = () =>{
+   let get = document.getElementById("bo1");
+   get.classList.toggle("bo1");
+ }
+
+   let div= document.querySelector("div");
+   div.addEventListener("click",(event)=>{
+console.log("uper gaya")
+   })
+   let buttton =document.getElementById("butt");
+   buttton.addEventListener("click",(event)=>{
+    event.stopPropagation();
+    console.log("niche aaya")
+   })
+  
+
+
+let arr = [];
+function reverse1(str){
+   for(let i = str.length-1;i>=0;i--){
+      arr.push(str[i])
+   }
+}
+reverse1("reverse jhala");
+ console.log([arr.join("")])
+function reverse(str){
+   let newStr = "";
+   for(let i = str.length-1;i>=0;i--){
+      newStr+= str[i];
+   }
+   return newStr
+}
+let store =reverse("ulta jhala");
+console.log([store])
+
+let array = ["mumbai","delhi","latur","washi","delhi"]
+function filter(arr){
+   return arr.filter(elem=> elem !== "delhi")
+}
+console.log(filter(array))
+let unique = new Set(array);
+console.log(unique)
+setTimeout(function(){
+let get = document.getElementsByTagName("p")
+get[0].style.backgroundColor = "green"
+},5000)
+  </script>
+</body>
+</html>

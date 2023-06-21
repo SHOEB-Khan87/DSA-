@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>check square</title>
+</head>
+<body>
+    <script>
+         // arr1 = [1,2,3,4], arr2=[1,4,9,16]
+         //if(arr1[i] * arr1[i] === arr2[j])
+         // o(n^2)  quadratic time complexity
+    function getSquare(arr1,arr2){
+        for(let i = 0;i<arr1.length;i++){
+            let square = false;
+            for(let j = 0;j<arr2.length;j++){
+                if(arr1[i] * arr1[i] === arr2[j]){
+                    square = true;
+                }
+                if(j === arr2.length - 1){
+                    if(!square){
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+    let store = getSquare([1,2,3,4],[1,4,9,16]);
+    console.log(store)
+//arr1 = [1,2,4,2] , arr2=[1,4,16,4];
+// we will create two map
+//map1={1:1,2:2,4:1}
+//map2={1:1,4:2,16:1}
+// we will check that map1 ki keys ka square map2 two ki keys mai hai ya nhi
+function findSquare(arr1,arr2){
+    let map1 = {};
+    let map2 = {};
+    for(let x of arr1){
+        map1[x] =( map1[x] || 0) + 1
+    }
+    for(let x of arr2){
+        map2[x] = (map2[x] || 0) + 1
+    }
+    for(let keys in map1){
+        if(!map2[keys * keys]){
+            return false
+        }
+        if(map1[keys] !== map2[keys * keys]){
+            return false;
+        }
+        
+    }
+    return true
+}
+let store1 = findSquare([1,2,3,4],[1,4,9,16]);
+console.log(store1)
+    </script>
+</body>
+</html>

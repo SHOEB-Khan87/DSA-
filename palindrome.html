@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrom</title>
+</head>
+<body>
+    <script>
+//case1
+function ispal(str){
+    let reverse = str.split("").reverse().join("");
+    return str.toLowerCase() === reverse.toLowerCase();
+
+
+    
+}
+console.log(ispal("level"))
+//case2;
+function ispal1(str){
+    let left = 0;
+    let right= str.length-1;
+    while(left < right){
+        if(str[left]!== str[right])return false;
+        left++;
+        right--;
+    }
+    return true;
+}
+let store = ispal1("noon");
+console.log(store)
+    </script>
+</body>
+</html>I am a fresher. i am looking for internship or full time job. my technical skills are html, css, javascript, react js, redux, bootstrap, material ui and github. i have created 5 projects with react js .
+
+I have created an E-commerce website and when i was creating it there was an issue like i was adding product in the cart and it was getting duplicated and the counter was not getting updated and i didn't want this behaviour then i searched solution on chrome and youtube and i found solution on youtube . i learned the solution and applied to my project then that issue was solved. 
